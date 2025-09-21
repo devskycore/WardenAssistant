@@ -1,6 +1,9 @@
 app = "wardenassistant-bot"
 primary_region = "scl" # Código de región para Santiago, Chile
 
+[build]
+builder = "heroku/buildpacks:20"
+
 [http_service]
 auto_start_machines = true
 auto_stop_machines = true
