@@ -6,10 +6,12 @@ WORKDIR /app
 
 # Copia los archivos del proyecto
 COPY package*.json ./
-COPY index.js ./
 
 # Instala las dependencias
 RUN npm install
+
+# Copia el resto del código (por ejemplo, index.js, .env, etc.)
+COPY . .
 
 # Expone el puerto (aunque tu bot no lo use, Fly.io lo requiere)
 EXPOSE 8080
