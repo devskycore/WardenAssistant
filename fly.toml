@@ -1,16 +1,11 @@
 app = "wardenassistant-bot"
 primary_region = "scl"
 
-[http_service]
-auto_start_machines = true
-auto_stop_machines = true
-force_https = true
-internal_port = 8080
-min_machines_running = 0
-processes = [ "app" ]
-
 [build]
   dockerfile = "Dockerfile"
+
+[processes]
+app = "node index.js"
 
 [[vm]]
 cpu_kind = "shared"
